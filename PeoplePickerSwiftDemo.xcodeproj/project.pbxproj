@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		838FA0BD1997027B00C83D46 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 838FA0BC1997027B00C83D46 /* README.md */; };
 		83AD6AE71996E67F0072947B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD6AE61996E67F0072947B /* AppDelegate.swift */; };
-		83AD6AE91996E67F0072947B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD6AE81996E67F0072947B /* ViewController.swift */; };
 		83AD6AEC1996E67F0072947B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AD6AEA1996E67F0072947B /* Main.storyboard */; };
 		83AD6AEE1996E6800072947B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83AD6AED1996E6800072947B /* Images.xcassets */; };
 		83AD6AFA1996E6810072947B /* PeoplePickerSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD6AF91996E6810072947B /* PeoplePickerSwiftDemoTests.swift */; };
+		83AD6B041996E6BB0072947B /* PickContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD6B031996E6BB0072947B /* PickContactViewController.swift */; };
+		83AD6B061996E6EA0072947B /* PickEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD6B051996E6EA0072947B /* PickEmailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,15 +27,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		838FA0BC1997027B00C83D46 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		83AD6AE11996E67E0072947B /* PeoplePickerSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeoplePickerSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AD6AE51996E67F0072947B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83AD6AE61996E67F0072947B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		83AD6AE81996E67F0072947B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		83AD6AEB1996E67F0072947B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83AD6AED1996E6800072947B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83AD6AF31996E6810072947B /* PeoplePickerSwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeoplePickerSwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AD6AF81996E6810072947B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83AD6AF91996E6810072947B /* PeoplePickerSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoplePickerSwiftDemoTests.swift; sourceTree = "<group>"; };
+		83AD6B031996E6BB0072947B /* PickContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickContactViewController.swift; sourceTree = "<group>"; };
+		83AD6B051996E6EA0072947B /* PickEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEmailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 		83AD6AD81996E67E0072947B = {
 			isa = PBXGroup;
 			children = (
+				838FA0BC1997027B00C83D46 /* README.md */,
 				83AD6AE31996E67E0072947B /* PeoplePickerSwiftDemo */,
 				83AD6AF61996E6810072947B /* PeoplePickerSwiftDemoTests */,
 				83AD6AE21996E67E0072947B /* Products */,
@@ -76,7 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				83AD6AE61996E67F0072947B /* AppDelegate.swift */,
-				83AD6AE81996E67F0072947B /* ViewController.swift */,
+				83AD6B031996E6BB0072947B /* PickContactViewController.swift */,
+				83AD6B051996E6EA0072947B /* PickEmailViewController.swift */,
 				83AD6AEA1996E67F0072947B /* Main.storyboard */,
 				83AD6AED1996E6800072947B /* Images.xcassets */,
 				83AD6AE41996E67F0072947B /* Supporting Files */,
@@ -208,7 +214,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83AD6AE91996E67F0072947B /* ViewController.swift in Sources */,
+				83AD6B041996E6BB0072947B /* PickContactViewController.swift in Sources */,
+				83AD6B061996E6EA0072947B /* PickEmailViewController.swift in Sources */,
+				838FA0BD1997027B00C83D46 /* README.md in Sources */,
 				83AD6AE71996E67F0072947B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +403,7 @@
 				83AD6AFF1996E6810072947B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83AD6B001996E6810072947B /* Build configuration list for PBXNativeTarget "PeoplePickerSwiftDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +412,7 @@
 				83AD6B021996E6810072947B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
