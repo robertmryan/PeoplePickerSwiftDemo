@@ -21,6 +21,11 @@ class PickEmailViewController: UIViewController, ABPeoplePickerNavigationControl
         let picker = ABPeoplePickerNavigationController()
         picker.peoplePickerDelegate = self
         picker.displayedProperties = [NSNumber(int: kABPersonEmailProperty)]
+
+        if picker.respondsToSelector(Selector("predicateForEnablingPerson")) {
+            picker.predicateForEnablingPerson = NSPredicate(format: "emailAddresses.@count > 0")
+        }
+
         presentViewController(picker, animated: true, completion: nil)
     }
     

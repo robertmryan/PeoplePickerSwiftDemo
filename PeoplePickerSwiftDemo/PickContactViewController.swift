@@ -20,6 +20,11 @@ class PickContactViewController: UIViewController, ABPeoplePickerNavigationContr
     func didTouchUpInsidePickButton(item: UIBarButtonItem) {
         let picker = ABPeoplePickerNavigationController()
         picker.peoplePickerDelegate = self
+
+        if picker.respondsToSelector(Selector("predicateForEnablingPerson")) {
+            picker.predicateForEnablingPerson = NSPredicate(format: "emailAddresses.@count > 0")
+        }
+
         presentViewController(picker, animated: true, completion: nil)
     }
     

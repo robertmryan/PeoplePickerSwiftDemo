@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		838FA0BD1997027B00C83D46 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 838FA0BC1997027B00C83D46 /* README.md */; };
 		83AD6AE71996E67F0072947B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD6AE61996E67F0072947B /* AppDelegate.swift */; };
 		83AD6AEC1996E67F0072947B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AD6AEA1996E67F0072947B /* Main.storyboard */; };
 		83AD6AEE1996E6800072947B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83AD6AED1996E6800072947B /* Images.xcassets */; };
@@ -216,7 +215,6 @@
 			files = (
 				83AD6B041996E6BB0072947B /* PickContactViewController.swift in Sources */,
 				83AD6B061996E6EA0072947B /* PickEmailViewController.swift in Sources */,
-				838FA0BD1997027B00C83D46 /* README.md in Sources */,
 				83AD6AE71996E67F0072947B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -321,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
