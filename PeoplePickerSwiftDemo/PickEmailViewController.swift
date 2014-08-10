@@ -32,4 +32,12 @@ class PickEmailViewController: UIViewController, ABPeoplePickerNavigationControl
         println("email = \(email)")
     }
 
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!, property: ABPropertyID, identifier: ABMultiValueIdentifier) -> Bool {
+        
+        peoplePickerNavigationController(peoplePicker, didSelectPerson: person, property: property, identifier: identifier)
+        
+        peoplePicker.dismissViewControllerAnimated(true, completion: nil)
+        
+        return false;
+    }
 }
