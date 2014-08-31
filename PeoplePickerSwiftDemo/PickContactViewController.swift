@@ -49,4 +49,7 @@ class PickContactViewController: UIViewController, ABPeoplePickerNavigationContr
         return false;
     }
     
+    func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
+        peoplePicker.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

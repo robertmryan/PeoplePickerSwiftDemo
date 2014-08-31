@@ -46,5 +46,7 @@ class PickEmailViewController: UIViewController, ABPeoplePickerNavigationControl
         return false;
     }
 
-    
+    func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
+        peoplePicker.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
