@@ -30,9 +30,9 @@ class PickEmailViewController: UIViewController, ABPeoplePickerNavigationControl
     }
     
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!, property: ABPropertyID, identifier: ABMultiValueIdentifier) {
-        let multiValue: ABMultiValueRef = ABRecordCopyValue(person, property).takeUnretainedValue()
+        let multiValue: ABMultiValueRef = ABRecordCopyValue(person, property).takeRetainedValue()
         let index = ABMultiValueGetIndexForIdentifier(multiValue, identifier)
-        let email = ABMultiValueCopyValueAtIndex(multiValue, index).takeUnretainedValue() as String
+        let email = ABMultiValueCopyValueAtIndex(multiValue, index).takeRetainedValue() as String
 
         println("email = \(email)")
     }
@@ -45,4 +45,6 @@ class PickEmailViewController: UIViewController, ABPeoplePickerNavigationControl
         
         return false;
     }
+
+    
 }

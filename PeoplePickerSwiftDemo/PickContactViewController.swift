@@ -29,10 +29,10 @@ class PickContactViewController: UIViewController, ABPeoplePickerNavigationContr
     }
     
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!) {
-        let emails: ABMultiValueRef = ABRecordCopyValue(person, kABPersonEmailProperty).takeUnretainedValue()
+        let emails: ABMultiValueRef = ABRecordCopyValue(person, kABPersonEmailProperty).takeRetainedValue()
         if (ABMultiValueGetCount(emails) > 0) {
             let index = 0 as CFIndex
-            let email = ABMultiValueCopyValueAtIndex(emails, index).takeUnretainedValue() as String
+            let email = ABMultiValueCopyValueAtIndex(emails, index).takeRetainedValue() as String
             
             println("first email for selected contact = \(email)")
         } else {
