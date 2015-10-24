@@ -21,26 +21,28 @@ class PickContactViewController: UIViewController, ABPeoplePickerNavigationContr
         let picker = ABPeoplePickerNavigationController()
         picker.peoplePickerDelegate = self
 
-        if picker.respondsToSelector(Selector("predicateForEnablingPerson")) {
+        if #available(iOS 8.0, *) {
             picker.predicateForEnablingPerson = NSPredicate(format: "emailAddresses.@count > 0")
+        } else {
+            // Fallback on earlier versions
         }
 
         presentViewController(picker, animated: true, completion: nil)
     }
     
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!) {
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController, didSelectPerson person: ABRecordRef) {
         let emails: ABMultiValueRef = ABRecordCopyValue(person, kABPersonEmailProperty).takeRetainedValue()
         if (ABMultiValueGetCount(emails) > 0) {
             let index = 0 as CFIndex
-            let email = ABMultiValueCopyValueAtIndex(emails, index).takeRetainedValue() as String
+            let email = ABMultiValueCopyValueAtIndex(emails, index).takeRetainedValue() as! String
             
-            println("first email for selected contact = \(email)")
+            print("first email for selected contact = \(email)")
         } else {
-            println("No email address")
+            print("No email address")
         }
     }
     
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController, shouldContinueAfterSelectingPerson person: ABRecordRef) -> Bool {
         
         peoplePickerNavigationController(peoplePicker, didSelectPerson: person)
         
@@ -49,7 +51,7 @@ class PickContactViewController: UIViewController, ABPeoplePickerNavigationContr
         return false;
     }
     
-    func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
+    func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController) {
         peoplePicker.dismissViewControllerAnimated(true, completion: nil)
     }
 }

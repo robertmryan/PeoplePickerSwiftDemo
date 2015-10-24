@@ -21,23 +21,25 @@ class PickEmailViewController: UIViewController, ABPeoplePickerNavigationControl
         let picker = ABPeoplePickerNavigationController()
         picker.peoplePickerDelegate = self
         picker.displayedProperties = [NSNumber(int: kABPersonEmailProperty)]
-
-        if picker.respondsToSelector(Selector("predicateForEnablingPerson")) {
+        
+        if #available(iOS 8.0, *) {
             picker.predicateForEnablingPerson = NSPredicate(format: "emailAddresses.@count > 0")
+        } else {
+            // Fallback on earlier versions
         }
-
+        
         presentViewController(picker, animated: true, completion: nil)
     }
     
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!, property: ABPropertyID, identifier: ABMultiValueIdentifier) {
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController, didSelectPerson person: ABRecordRef, property: ABPropertyID, identifier: ABMultiValueIdentifier) {
         let multiValue: ABMultiValueRef = ABRecordCopyValue(person, property).takeRetainedValue()
         let index = ABMultiValueGetIndexForIdentifier(multiValue, identifier)
-        let email = ABMultiValueCopyValueAtIndex(multiValue, index).takeRetainedValue() as String
+        let email = ABMultiValueCopyValueAtIndex(multiValue, index).takeRetainedValue() as! String
 
-        println("email = \(email)")
+        print("email = \(email)")
     }
 
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!, property: ABPropertyID, identifier: ABMultiValueIdentifier) -> Bool {
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController, shouldContinueAfterSelectingPerson person: ABRecordRef, property: ABPropertyID, identifier: ABMultiValueIdentifier) -> Bool {
         
         peoplePickerNavigationController(peoplePicker, didSelectPerson: person, property: property, identifier: identifier)
         
@@ -46,7 +48,7 @@ class PickEmailViewController: UIViewController, ABPeoplePickerNavigationControl
         return false;
     }
 
-    func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
+    func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController) {
         peoplePicker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
